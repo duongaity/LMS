@@ -3,10 +3,6 @@ FROM jenkins/jenkins:lts
 # Switch to root user /highest priority
 USER root
 
-# Install third-party plugins required by Artemis
-COPY plugins.yml /usr/share/jenkins/ref/plugins.yml
-RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.yml
-
 # Update package list and install dependencies
 RUN apt-get update -qq \
     && apt-get install -qqy \
