@@ -5,6 +5,7 @@
 services:
     jenkins:
         container_name: artemis-jenkins
+        image: duongaity/artemis-jenkins
         extra_hosts:
             - "host.docker.internal:host-gateway"
         build: .
